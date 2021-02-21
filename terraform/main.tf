@@ -12,10 +12,6 @@ terraform {
 # service principal
 provider "azurerm" {
   features {}
-  subscription_id = "<SUBSCRIPCION ID>"
-  client_id       = "<APP_ID>"
-  client_secret   = "<PASSWORD>"
-  tenant_id       = "<TENANT>"
 }
 
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group
