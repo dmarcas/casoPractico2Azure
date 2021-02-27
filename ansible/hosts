@@ -3,11 +3,11 @@ ansible_python_interpreter=/usr/bin/python3
 ansible_user=ansible
 
 [master]
-my-first-azure-vm.azure
+my-first-azure-vm
 
 [workers]
-my-third-azure-vm.azure
-my-fourth-azure-vm.azure
+my-third-azure-vm
+my-fourth-azure-vm
 
 [nfs]
-my-second-azure-vm.azure
+my-second-azure-vm
