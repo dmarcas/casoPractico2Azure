@@ -3,9 +3,9 @@
   become: yes
   tasks:
   - name: install nfs utils
-    shell: dnf install nfs-utils
+    shell: dnf install nfs-utils -y
     register: output
 
   - name: install nfs tools
-    shell: dnf install nfs-tools
+    shell: dnf install nfs-tools -y
     register: output
