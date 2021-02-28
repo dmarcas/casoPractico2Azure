@@ -1,6 +1,6 @@
 ---
 - hosts: master
   become: yes
-  
-  - name: Deploy ingress-controller
+  tasks:
+  - name: Deploy application
     command: kubectl apply -f first-app.yaml 
