@@ -6,6 +6,14 @@
     shell: dnf install nfs-utils -y
     register: output
 
-  - name: install nfs tools
+  - name: install net tools
     shell: dnf install net-tools -y
+    register: output
+  
+  - name: start nfs servvice
+    shell: systemctl start nfs-server.servvice
+    register: output
+  
+  - name: check server status
+    shell: systemctl status nfs-server.servvice
     register: output
