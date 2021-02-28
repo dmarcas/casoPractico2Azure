@@ -1,0 +1,26 @@
+---
+- hosts: nfs
+  become: yes
+  tasks:
+  - name: install nfs server
+    action: yum pkg=nfs-utils state=present
+    when: is_centos
+    tags:
+      - nfs
+
+  - name: install nfs tools
+    action: yum pkg=nfs-tools state=present
+    when: is_centos
+    tags:
+      - nfs
+
+  # CentOS does not start needed services after installation
+  - name: ensure nfs service is running (CentOS)
+    action: service name={{item}} state=started
+    when: is_centos
+    tags:
+      - nfs
+    with_items:
+      - rpcbind
+      - nfslock
+      - nfs
