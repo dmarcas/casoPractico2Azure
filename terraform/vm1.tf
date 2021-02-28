@@ -5,7 +5,7 @@ resource "azurerm_linux_virtual_machine" "myVM1" {
     name                = "my-first-azure-vm"
     resource_group_name = azurerm_resource_group.rg.name
     location            = azurerm_resource_group.rg.location
-    size                = var.vm_size
+    size                = var.vm_size_2
     admin_username      = "adminUsername"
     network_interface_ids = [ azurerm_network_interface.myNic1.id ]
     disable_password_authentication = true
