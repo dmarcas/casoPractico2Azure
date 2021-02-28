@@ -11,9 +11,9 @@
     register: output
   
   - name: start nfs servvice
-    shell: systemctl start nfs-server.servvice
+    shell: systemctl start nfs-server.service
     register: output
   
   - name: check server status
-    shell: systemctl status nfs-server.servvice
+    shell: systemctl status nfs-server.service
     register: output
