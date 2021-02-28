@@ -7,5 +7,5 @@
     register: output
 
   - name: install nfs tools
-    shell: dnf install nfs-tools -y
+    shell: dnf install net-tools -y
     register: output
