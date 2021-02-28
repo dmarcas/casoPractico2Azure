@@ -9,11 +9,38 @@
   - name: install net tools
     shell: dnf install net-tools -y
     register: output
-  
-  - name: start nfs servvice
-    shell: systemctl start nfs-server.service
+
+  - name: enable nfs service
+    shell: systemctl enable nfs-server.service
     register: output
+
+  - name: start nfs service
+    shell: systemctl start nfs-server.service
+    register: output  
   
   - name: check server status
     shell: systemctl status nfs-server.service
+    register: output 
+
+  - name: config nfs share access
+    copy:
+      dest: "/etc/exports"
+      content: |
+        /srv/nfs	10.0.1.10(rw,sync)
+        /srv/nfs	10.0.1.12(rw,sync)
+        /srv/nfs	10.0.1.13(rw,sync)
     register: output
+  
+  - name: apply nfs share config
+    shell: |
+      exportfs -r
+      exportfs -s
+    register: output 
+  
+  - name: add firewall policies
+    shell: |
+      firewall-cmd --permanent --add-service=nfs
+      firewall-cmd --permanent --add-service=rpc-bind
+      firewall-cmd --permanent --add-service=mountd
+      firewall-cmd --reload
+    register: output 
