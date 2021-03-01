@@ -11,7 +11,7 @@ This folder contains all the files needed to deploy an infrastructure in Azure o
 
 ### How to deploy the infrastructure with terraform in Azure
 
-1.- First of all, you have to create a credentials.tf file with the service principal according to your azure subscription. The contents of the file should be as follows:
+1.- First of all, you have to create a credentials.tf file with the service principal according to your azure subscription into the terraform folder. The contents of the file should be as follows:
 
 ```
 service principal
