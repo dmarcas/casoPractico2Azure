@@ -6,7 +6,6 @@ This repo contains two main folders:
 - Ansible
 
 ## Terraform
-___
 
 This folder contains all the files needed to deploy an infrastructure in Azure of 4 virtual machines.
 
@@ -40,7 +39,6 @@ terraform apply
 ```
 
 ## Ansible
-___
 
 Contains all the playbooks and files needed to deploy kubernetes cluster and an application.
 
